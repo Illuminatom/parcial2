@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="col-6">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <h5>#</h5>
+          </th>
+          <th>
+            <h5>Name</h5>
+          </th>
+          <th>
+            <h5>Starts</h5>
+          </th>
+          <th>
+            <h5>Ends</h5>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conferencia of conferencias">
+          <td>{{conferencia.id}}</td>
+          <td (class)="onSelected(conferencia)">{{conferencia.name}}</td>
+          <td>{{conferencia.starts}}</td>
+          <td>{{conferencia.ends}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6" *ngIf="selected">
+    <app-conferencias-detail></app-conferencias-detail>
+  </div>
+</div>
